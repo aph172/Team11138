@@ -30,7 +30,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
 TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-package org.firstinspires.ftc.teamcode11138;
+package org.firstinspires.ftc.Robot1;
 
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -64,7 +64,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 // @Autonomous(name="Pushbot: Auto Drive By Encoder", group="Pushbot")
 @TeleOp(name="Test Start From Far Position To Parallel Wall", group="Test")
 // @Disabled
-public class TestStartFromFarPositionToParallelWall extends FTC11138Base2 {
+public class TestStartFromFarPositionToParallelWall extends FTC11138Base1 {
 
     @Override
     public void runOpMode() throws InterruptedException {

@@ -1,9 +1,13 @@
-package org.firstinspires.ftc.teamcode11138;
+package org.firstinspires.ftc.Robot1;
 
+import com.qualcomm.hardware.bosch.BNO055IMU;
+import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cRangeSensor;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.TouchSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 /**
@@ -25,19 +29,26 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class FTC11138Robot1
 {
     /* Public OpMode members. */
-    public DcMotor  leftMotor   = null;
-    public DcMotor  rightMotor  = null;
-    public DcMotor  leftShoot   = null;
+    private HardwareMap hwMap  = null;
+    public DcMotor  leftMotor  = null;
+    public DcMotor  rightMotor = null;
     public DcMotor  rightShoot = null;
-    public Servo    leftClaw    = null;
-    public Servo    rightClaw   = null;
+    public DcMotor  leftShoot = null;
+    public DcMotor  collectorMotor = null;
+    public Servo    dispensingServo = null;
+
+    public ModernRoboticsI2cRangeSensor rangeSensor = null;
+    public BNO055IMU imu = null;
+    public ColorSensor beaconColorSensor = null;
+    public ColorSensor floorColorSensor = null;
+    public DeviceInterfaceModule cdim = null;
+    public TouchSensor shootTouchSensor = null;
 
     public static final double MID_SERVO       =  0.5 ;
     public static final double ARM_UP_POWER    =  0.45 ;
     public static final double ARM_DOWN_POWER  = -0.45 ;
 
     /* local OpMode members. */
-    HardwareMap hwMap           =  null;
     private ElapsedTime period  = new ElapsedTime();
 
     /* Constructor */

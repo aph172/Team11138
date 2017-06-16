@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode11138;
+package org.firstinspires.ftc.Robot1;
 
 import android.graphics.Color;
 
@@ -40,11 +40,9 @@ public class FTC11138Base1 extends LinearOpMode {
     static final double WHEEL_DIAMETER_INCHES = 4.0;     // For figuring circumference
     static final double COUNTS_PER_INCH = (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (WHEEL_DIAMETER_INCHES * Math.PI);
     static final float mmPerInch = 25.4f;
-    static final float mmPerCm=10;
     static final float robotWidthInch = 18;
     static final float robotLengthInch = 18;
     static final float playFieldWidthInch = 141;  //11 feet 9 inch
-    static final float playFieldLengthInch = 141;  //11 feet 9 inch
 
     //ToDo: The follow parameters need to be tested and adjusted, but applies to all running opmode.
     double blackColorValue=3.5; //This is the floor hsvValue reading.  Need to be tested on the play field
@@ -63,6 +61,7 @@ public class FTC11138Base1 extends LinearOpMode {
     Acceleration gravity;
     static double DRIVE_SPEED;
     static double TURN_SPEED;
+    double startPositionAngle;
     double refPositionAngle;
     double currentPositionAngle;
 
@@ -105,12 +104,11 @@ public class FTC11138Base1 extends LinearOpMode {
         DRIVE_SPEED=0.3;
         TURN_SPEED=0.15;
 
-        telemetry.addData("Status", "Resetting Encoders");    //
+        telemetry.addData("Status", "Resetting Encoders");
         telemetry.update();
 
         robot.leftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.rightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        //// delete idle() from SDK 2.3 or later
 
         // Send telemetry message to indicate successful Encoder reset
         telemetry.addData("Path0", "Starting at %7d :%7d",
@@ -140,7 +138,15 @@ public class FTC11138Base1 extends LinearOpMode {
         return sensorReadColor;
     }
 
-    //use hsv Value to check for white
+    public void getInitValues() {
+        startPositionAngle = getIMUAngle();
+        blackColorValue = getHSVValue(robot.floorColorSensor);
+        telemetry.addData("Start drive direction", startPositionAngle);
+        telemetry.addData("Ground color value", blackColorValue);
+        telemetry.update();
+    }
+
+        //use hsv Value to check for white
     public double getHSVValue(ColorSensor colorSensorToUse){
         int redValue = colorSensorToUse.red();
         int blueValue = colorSensorToUse.blue();

@@ -30,7 +30,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
 TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-package org.firstinspires.ftc.teamcode11138;
+package org.firstinspires.ftc.Robot1;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -55,7 +55,7 @@ import com.qualcomm.robotcore.util.Range;
 
 public class FTC11138PushBot extends LinearOpMode {
     /* Declare OpMode members. */
-    FTC11138Robot2 myRobot          = new FTC11138Robot2();   // Use a Pushbot's hardware
+    FTC11138Robot1 myRobot          = new FTC11138Robot1();   // Use a Pushbot's hardware
                                                             // could also use HardwarePushbotMatrix class.
     @Override
     public void runOpMode() throws InterruptedException {
