@@ -64,7 +64,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 // @Autonomous(name="Pushbot: Auto Drive By Encoder", group="Pushbot")
 @TeleOp(name="Test Start From Close Position To Parallel Wall", group="Test")
 // @Disabled
-public class TestStartFromClosePositionToParallelWall extends FTC11138Base2 {
+public class TestStartFromClosePositionToParallelWall extends FTC11138Base1 {
 
     @Override
     public void runOpMode() throws InterruptedException {

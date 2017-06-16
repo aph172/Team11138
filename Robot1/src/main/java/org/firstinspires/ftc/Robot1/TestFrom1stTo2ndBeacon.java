@@ -64,7 +64,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 // @Autonomous(name="Pushbot: Auto Drive By Encoder", group="Pushbot")
 @TeleOp(name="Test From 1st to 2nd Beacon", group="Test")
 // @Disabled
-public class TestFrom1stTo2ndBeacon extends FTC11138Base2 {
+public class TestFrom1stTo2ndBeacon extends FTC11138Base1 {
 
     @Override
     public void runOpMode() throws InterruptedException {

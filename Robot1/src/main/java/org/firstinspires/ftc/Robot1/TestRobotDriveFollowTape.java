@@ -37,7 +37,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 @TeleOp(name = "Test Robot Follow Tape", group = "Test")
 // @Disabled                            // Uncomment this to add to the opmode list
 
-public class TestRobotDriveFollowTape extends FTC11138Base2 {
+public class TestRobotDriveFollowTape extends FTC11138Base1 {
 
     @Override public void runOpMode() throws InterruptedException {
 

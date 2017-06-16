@@ -72,7 +72,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 @TeleOp(name = "Test Color Range IMU", group = "Test")
 
 // @Disabled                            // Comment this out to add to the opmode list
-public class TestColorRangeIMU extends FTC11138Base2 {
+public class TestColorRangeIMU extends FTC11138Base1 {
 
   @Override
   public void runOpMode() throws InterruptedException {
@@ -106,7 +106,7 @@ public class TestColorRangeIMU extends FTC11138Base2 {
     robot.cdim.setDigitalChannelMode(LED_CHANNEL, DigitalChannelController.Mode.OUTPUT);
 
     I2c_MR = robot.beaconColorSensor.getI2cAddress();
-    I2c_MR = robot.colorSensor2.getI2cAddress();
+    I2c_MR = robot.floorColorSensor.getI2cAddress();
 
     //turn off the LED on MR sensor
     robot.beaconColorSensor.enableLed(bMRLedOn);
@@ -137,15 +137,15 @@ public class TestColorRangeIMU extends FTC11138Base2 {
       bPrevState = bCurrState;
 
       // convert the RGB values to HSV values.
-      Color.RGBToHSV( robot.colorSensor2.red(),
-                      robot.colorSensor2.green(),
-                      robot.colorSensor2.blue(), hsvValues_MR);
+      Color.RGBToHSV( robot.floorColorSensor.red(),
+                      robot.floorColorSensor.green(),
+                      robot.floorColorSensor.blue(), hsvValues_MR);
       Color.RGBToHSV( robot.beaconColorSensor.red(),
                       robot.beaconColorSensor.green(),
                       robot.beaconColorSensor.blue(), hsvValues_MR);
 
       // send the info back to driver station using telemetry function.
-      telemetry.addData("tape sensor detected color", detectedGroundColor(robot.colorSensor2));
+      telemetry.addData("tape sensor detected color", detectedGroundColor(robot.floorColorSensor));
       telemetry.addData("beacon sensor detected color", detectedBeaconColor(robot.beaconColorSensor));
 
       telemetry.addData("LED", bMRLedOn ? "On" : "Off");
@@ -159,10 +159,10 @@ public class TestColorRangeIMU extends FTC11138Base2 {
       telemetry.addData("MR I2c Address: ", I2c_MR.toString());
 
       telemetry.addData("LED", bMRLedOn ? "On" : "Off");
-      telemetry.addData("MR: Clear", robot.colorSensor2.alpha());
-      telemetry.addData("MR: Red  ", robot.colorSensor2.red());
-      telemetry.addData("MR: Green", robot.colorSensor2.green());
-      telemetry.addData("MR: Blue ", robot.colorSensor2.blue());
+      telemetry.addData("MR: Clear", robot.floorColorSensor.alpha());
+      telemetry.addData("MR: Red  ", robot.floorColorSensor.red());
+      telemetry.addData("MR: Green", robot.floorColorSensor.green());
+      telemetry.addData("MR: Blue ", robot.floorColorSensor.blue());
       telemetry.addData("MR: Hue", hsvValues_MR[0]);
       telemetry.addData("MR Sat", hsvValues_MR[1]);
       telemetry.addData("MR Value",hsvValues_MR[2]);

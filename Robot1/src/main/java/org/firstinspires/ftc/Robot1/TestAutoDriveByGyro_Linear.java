@@ -75,7 +75,7 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
 @Autonomous(name="Test Auto Drive By Gyro", group="Test")
 
-public class TestAutoDriveByGyro_Linear extends FTC11138Base2 {
+public class TestAutoDriveByGyro_Linear extends FTC11138Base1 {
 
     @Override
     public void runOpMode() throws InterruptedException {

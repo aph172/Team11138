@@ -37,7 +37,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 @TeleOp(name = "Test Search White Tape", group = "Test")
 // @Disabled                            // Uncomment this to add to the opmode list
 
-public class TestSearchWhiteTape extends FTC11138Base2 {
+public class TestSearchWhiteTape extends FTC11138Base1 {
 
      @Override public void runOpMode() throws InterruptedException {
 
@@ -50,8 +50,8 @@ public class TestSearchWhiteTape extends FTC11138Base2 {
          noEncoderDetectWhiteLine();
 
          telemetry.addData("black color reading", groundColorValue);
-         telemetry.addData("Ground color hsv Value", getHSVValue(robot.colorSensor2));
-         telemetry.addData("detected color", detectedGroundColor(robot.colorSensor2));
+         telemetry.addData("Ground color hsv Value", getHSVValue(robot.floorColorSensor));
+         telemetry.addData("detected color", detectedGroundColor(robot.floorColorSensor));
          telemetry.update();
 
          sleep(3000);

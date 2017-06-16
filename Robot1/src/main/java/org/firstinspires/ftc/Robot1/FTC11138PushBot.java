@@ -71,7 +71,7 @@ public class FTC11138PushBot extends LinearOpMode {
         double collectorPower = 0;  //collector motor power
         double    clawOffset      = 0.0;
 
-        myRobot.initTeleop(hardwareMap);
+        myRobot.init(hardwareMap);
 
         // Send telemetry message to signify robot waiting;
         telemetry.addData("Say", "Hello Driver");

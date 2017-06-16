@@ -71,7 +71,7 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 // @Autonomous(name="Pushbot: Auto Drive By Encoder", group="Pushbot")
 @TeleOp(name="Test Auto Drive By Encoder and Turn", group="Test")
 // @Disabled
-public class TestDriveByEncoderAndTurn extends FTC11138Base2 {
+public class TestDriveByEncoderAndTurn extends FTC11138Base1 {
 
     @Override
     public void runOpMode() throws InterruptedException {

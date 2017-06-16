@@ -49,17 +49,12 @@ public class FTC11138BlueLeftShootPushCapBallPark extends FTC11138Base1 {
         waitForStart();
         sleep(10000);
         encoderDrive(0.34, -11, -11, 10.0);
-        shootTwoParticles();
+
         encoderDrive(0.32, -15, -15, 10.0);
         sleep(1000);
         Direction turnDirection = Direction.Left;
-        turnRobotRightWheelMorePower(0.33, turnDirection, 100, 10.0);
+        turnRobot(0.3, turnDirection, 100,10);
         encoderDrive(0.34, 70, 70, 10.0);
-        //turnRobot(0.33, turnDirection, 90, 10.0);
-        //turnRobot(0.33, turnDirection, 180, 10.0);
-        //encoderDrive(0.34, 45, 45, 10.0);
-        //noEncoderDetectWhiteLine();
-
 
     }
 }

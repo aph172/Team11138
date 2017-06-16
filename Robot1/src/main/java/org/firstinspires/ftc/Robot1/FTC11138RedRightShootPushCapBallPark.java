@@ -34,7 +34,6 @@ package org.firstinspires.ftc.Robot1;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
-Team
 @Autonomous(name = "FTC11138RedRightShootPushCapBallPark", group = "11138")
 
 public class FTC11138RedRightShootPushCapBallPark extends FTC11138Base1 {

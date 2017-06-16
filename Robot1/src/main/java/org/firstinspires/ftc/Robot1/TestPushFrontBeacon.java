@@ -39,7 +39,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp(name="Test push front beacon", group="Test")
 
-public class TestPushFrontBeacon extends FTC11138Base2 {
+public class TestPushFrontBeacon extends FTC11138Base1 {
 
     @Override
     public void runOpMode() throws InterruptedException {

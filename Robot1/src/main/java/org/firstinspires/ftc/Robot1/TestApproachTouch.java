@@ -64,7 +64,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 // @Autonomous(name="Pushbot: Auto Drive By Encoder", group="Pushbot")
 @TeleOp(name="Test Approach Touch", group="Test")
 // @Disabled
-public class TestApproachTouch extends FTC11138Base2 {
+public class TestApproachTouch extends FTC11138Base1 {
 
     @Override
     public void runOpMode() throws InterruptedException {
